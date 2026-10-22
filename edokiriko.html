@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>江戸切子 - 日本の伝統美</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-switch-header">
+  <button id="btn-ja" class="lang-btn active" onclick="switchLanguage('ja')">JP</button>
+  <span class="lang-divider">|</span>
+  <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+</div>
+
+<section class="detail-section" style="margin-top: 80px;">
+  <h2>
+    <span class="lang-ja">江戸切子（えどきりこ）</span>
+    <span class="lang-en" style="display: none;">Edo Kiriko (Cut Glass)</span>
+  </h2>
+  
+  <div class="layout">
+    <div>
+      <img src="edokiriko.jpg" alt="江戸切子">
+    </div>
+    <div>
+      <p class="shop-text lang-ja">
+        江戸切子は、透明なガラスの表面に専用の道具で鮮やかなカットを施す、日本の伝統的なガラス工芸です。光が当たるとキラキラと乱反射し、繊細なきらめきが魅了します。
+      </p>
+      <p class="shop-text lang-en" style="display: none;">
+        Edo Kiriko is a traditional craft where intricate patterns are carved into colored glass surfaces. The glass beautifully refracts light, captivating people with its delicate sparkle.
+      </p>
+
+      <div class="info-box">
+        <h3>
+          <span class="lang-ja">📍 有名な産地</span>
+          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
+        </h3>
+        <p class="lang-ja"><strong>東京都（江東区・墨田区など）</strong><br>江戸時代後期に始まり、現在は東京の下町を中心に技術が受け継がれています。</p>
+        <p class="lang-en" style="display: none;"><strong>Tokyo (Koto Ward, Sumida Ward, etc.)</strong><br>Originating in the late Edo period, this craft continues to thrive in Tokyo's historic districts.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="index.html" class="scroll-btn">
+      <span class="lang-ja">← トップページに戻る</span>
+      <span class="lang-en" style="display: none;">← Back to Top</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  // 1. 言語を切り替えて保存する関数
+  function switchLanguage(lang) {
+    const jaElements = document.querySelectorAll('.lang-ja');
+    const enElements = document.querySelectorAll('.lang-en');
+    const btnJa = document.getElementById('btn-ja');
+    const btnEn = document.getElementById('btn-en');
+
+    // ブラウザに言語設定を記憶させる
+    localStorage.setItem('siteLang', lang);
+
+    if (lang === 'en') {
+      jaElements.forEach(el => el.style.display = 'none');
+      enElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-en, div.lang-en').forEach(el => el.style.display = 'block');
+      if (btnJa) btnJa.classList.remove('active');
+      if (btnEn) btnEn.classList.add('active');
+    } else {
+      enElements.forEach(el => el.style.display = 'none');
+      jaElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-ja, div.lang-ja').forEach(el => el.style.display = 'block');
+      if (btnEn) btnEn.classList.remove('active');
+      if (btnJa) btnJa.classList.add('active');
+    }
+  }
+
+  // 2. ページを開いたとき、保存されている言語を自動で適用する
+  document.addEventListener('DOMContentLoaded', () => {
+    // 保存されている言語を取得（保存されていなければデフォルトで 'ja'）
+    const savedLang = localStorage.getItem('siteLang') || 'ja';
+    switchLanguage(savedLang);
+  });
+</script>
+
+</body>
+</html>

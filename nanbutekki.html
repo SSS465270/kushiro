@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>南部鉄器 - 日本の伝統美</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-switch-header">
+  <button id="btn-ja" class="lang-btn active" onclick="switchLanguage('ja')">JP</button>
+  <span class="lang-divider">|</span>
+  <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+</div>
+
+<section class="detail-section" style="margin-top: 80px;">
+  <h2>
+    <span class="lang-ja">南部鉄器（なんぶてっき）</span>
+    <span class="lang-en" style="display: none;">Nanbu Tekki (Ironware)</span>
+  </h2>
+  
+  <div class="layout">
+    <div>
+      <img src="nanbutekki.jpg" alt="南部鉄器">
+    </div>
+    <div>
+      <p class="shop-text lang-ja">
+        南部鉄器は、独特の文様と重厚感が特徴の伝統的な鋳物技術です。保温性に優れており、お湯を沸かすと水質がまろやかになり、手軽に鉄分補給ができることでも高く評価されています。
+      </p>
+      <p class="shop-text lang-en" style="display: none;">
+        Nanbu Tekki is traditional cast ironware characterized by distinctive relief patterns and solid texture. Known for excellent heat retention, water boiled in Nanbu kettles tastes softer.
+      </p>
+
+      <div class="info-box">
+        <h3>
+          <span class="lang-ja">📍 有名な産地</span>
+          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
+        </h3>
+        <p class="lang-ja"><strong>岩手県（盛岡市・奥州市）</strong><br>江戸時代に南部藩主が京都から鋳物師を招いて作らせたのが始まりとされています。</p>
+        <p class="lang-en" style="display: none;"><strong>Iwate Prefecture (Morioka & Oshu)</strong><br>Began when the local feudal lord invited master foundrymen from Kyoto during the Edo period.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="index.html" class="scroll-btn">
+      <span class="lang-ja">← トップページに戻る</span>
+      <span class="lang-en" style="display: none;">← Back to Top</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  // 1. 言語を切り替えて保存する関数
+  function switchLanguage(lang) {
+    const jaElements = document.querySelectorAll('.lang-ja');
+    const enElements = document.querySelectorAll('.lang-en');
+    const btnJa = document.getElementById('btn-ja');
+    const btnEn = document.getElementById('btn-en');
+
+    // ブラウザに言語設定を記憶させる
+    localStorage.setItem('siteLang', lang);
+
+    if (lang === 'en') {
+      jaElements.forEach(el => el.style.display = 'none');
+      enElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-en, div.lang-en').forEach(el => el.style.display = 'block');
+      if (btnJa) btnJa.classList.remove('active');
+      if (btnEn) btnEn.classList.add('active');
+    } else {
+      enElements.forEach(el => el.style.display = 'none');
+      jaElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-ja, div.lang-ja').forEach(el => el.style.display = 'block');
+      if (btnEn) btnEn.classList.remove('active');
+      if (btnJa) btnJa.classList.add('active');
+    }
+  }
+
+  // 2. ページを開いたとき、保存されている言語を自動で適用する
+  document.addEventListener('DOMContentLoaded', () => {
+    // 保存されている言語を取得（保存されていなければデフォルトで 'ja'）
+    const savedLang = localStorage.getItem('siteLang') || 'ja';
+    switchLanguage(savedLang);
+  });
+</script>
+
+</body>
+</html>

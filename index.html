@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>日本の伝統美 - Traditional Japanese Crafts</title>
+  <title>クラス番号と名前</title> <!-- ※指示通りに番号と名前に変更してください -->
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
 
 <!-- ① 表紙（ウェルカム画面） -->
 <header class="hero">
-  <!-- 右上の言語切り替えUI -->
   <div class="lang-switch-header">
     <button id="btn-ja" class="lang-btn active" onclick="switchLanguage('ja')">JP</button>
     <span class="lang-divider">|</span>
@@ -36,20 +35,20 @@
 </header>
 
 
-<!-- ② 選択画面（4つのカード） -->
+<!-- ② 選択画面（別ページへ飛ぶ4つのカード） -->
 <section id="select-section" class="select-container">
   <h2>
     <span class="lang-ja">伝統工芸を選ぶ</span>
     <span class="lang-en" style="display: none;">Select a Craft</span>
   </h2>
   <p class="select-lead">
-    <span class="lang-ja">知りたい工芸品を選択してください</span>
-    <span class="lang-en" style="display: none;">Choose a craft to learn more about its history and features.</span>
+    <span class="lang-ja">知りたい工芸品を選択してください（専用ページへ移動します）</span>
+    <span class="lang-en" style="display: none;">Choose a craft to view its detail page.</span>
   </p>
 
   <div class="card-grid">
     <!-- 1. 寄木細工 -->
-    <a href="#yosegi" class="card">
+    <a href="yosegi.html" class="card">
       <div class="card-img-wrapper">
         <img src="yosegi.jpeg" alt="寄木細工">
       </div>
@@ -63,14 +62,14 @@
           <span class="lang-en" style="display: none;">Intricate geometric patterns and natural wood warmth.</span>
         </p>
         <span class="card-btn">
-          <span class="lang-ja">詳しく見る →</span>
-          <span class="lang-en" style="display: none;">Read More →</span>
+          <span class="lang-ja">専用ページへ →</span>
+          <span class="lang-en" style="display: none;">Go to Page →</span>
         </span>
       </div>
     </a>
 
     <!-- 2. 扇子 -->
-    <a href="#sensu" class="card">
+    <a href="sensu.html" class="card">
       <div class="card-img-wrapper">
         <img src="sensu.webp" alt="扇子">
       </div>
@@ -84,14 +83,14 @@
           <span class="lang-en" style="display: none;">Functional elegance symbolizing prosperity and good fortune.</span>
         </p>
         <span class="card-btn">
-          <span class="lang-ja">詳しく見る →</span>
-          <span class="lang-en" style="display: none;">Read More →</span>
+          <span class="lang-ja">専用ページへ →</span>
+          <span class="lang-en" style="display: none;">Go to Page →</span>
         </span>
       </div>
     </a>
 
     <!-- 3. 江戸切子 -->
-    <a href="#edokiriko" class="card">
+    <a href="edokiriko.html" class="card">
       <div class="card-img-wrapper">
         <img src="edokiriko.jpg" alt="江戸切子">
       </div>
@@ -105,14 +104,14 @@
           <span class="lang-en" style="display: none;">Brilliant cut glass patterns creating stunning light reflections.</span>
         </p>
         <span class="card-btn">
-          <span class="lang-ja">詳しく見る →</span>
-          <span class="lang-en" style="display: none;">Read More →</span>
+          <span class="lang-ja">専用ページへ →</span>
+          <span class="lang-en" style="display: none;">Go to Page →</span>
         </span>
       </div>
     </a>
 
     <!-- 4. 南部鉄器 -->
-    <a href="#nanbutekki" class="card">
+    <a href="nanbutekki.html" class="card">
       <div class="card-img-wrapper">
         <img src="nanbutekki.jpg" alt="南部鉄器">
       </div>
@@ -126,226 +125,15 @@
           <span class="lang-en" style="display: none;">Durable cast ironware known for heat retention and rustic beauty.</span>
         </p>
         <span class="card-btn">
-          <span class="lang-ja">詳しく見る →</span>
-          <span class="lang-en" style="display: none;">Read More →</span>
+          <span class="lang-ja">専用ページへ →</span>
+          <span class="lang-en" style="display: none;">Go to Page →</span>
         </span>
       </div>
     </a>
   </div>
 </section>
 
-
-<!-- ③ 寄木細工の詳細ページ -->
-<section id="yosegi" class="detail-section">
-  <h2>
-    <span class="lang-ja">寄木細工（よせぎざいく）</span>
-    <span class="lang-en" style="display: none;">Yosegi-zaiku (Marquetry)</span>
-  </h2>
-  <div class="layout">
-    <div>
-      <img src="yosegi.jpeg" alt="寄木細工の幾何学模様">
-    </div>
-    <div>
-      <p class="shop-text lang-ja">
-        寄木細工は、様々な種類の色鮮やかな木材を組み合わせ、精密な幾何学模様を作り出す伝統的な木工芸です。<br>
-        木の持ち味である自然の配色や木目をそのまま活かし、細部まで計算し尽くされた美しさと温もりあふれる質感が魅力です。
-      </p>
-      <p class="shop-text lang-en" style="display: none;">
-        Yosegi-zaiku is a traditional Japanese woodworking technique that combines various natural woods to create intricate geometric patterns.<br>
-        By utilizing the natural colors and grain of different woods, craftsmen produce beautiful, warm, and highly precise works of art.
-      </p>
-
-      <div class="info-box">
-        <h3>
-          <span class="lang-ja">📍 有名な産地</span>
-          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
-        </h3>
-        <p class="lang-ja"><strong>神奈川県 箱根町（箱根寄木細工）</strong><br>江戸時代末期に箱根の温泉場のお土産として発展し、今なお職人の技が受け継がれています。</p>
-        <p class="lang-en" style="display: none;"><strong>Hakone, Kanagawa Prefecture</strong><br>Developed in the late Edo period as souvenirs for hot spring visitors, this craft is still preserved by master artisans today.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ④ 扇子の詳細ページ -->
-<section id="sensu" class="detail-section">
-  <h2>
-    <span class="lang-ja">扇子（せんす）</span>
-    <span class="lang-en" style="display: none;">Sensu (Folding Fans)</span>
-  </h2>
-  <div class="layout">
-    <div>
-      <img src="sensu.webp" alt="美しく開いた扇子">
-    </div>
-    <div>
-      <p class="shop-text lang-ja">
-        扇子はあおいで風を起こすだけでなく、日本の礼儀作法や伝統芸能にも深く結びついてきた文化的な道具です。<br>
-        開いたときの美しい末広がり（末広）の形は、縁起が良いものとされ、古くから贈り物や祝宴の場でも親しまれています。
-      </p>
-      <p class="shop-text lang-en" style="display: none;">
-        Sensu are traditional folding fans that serve not only to cool oneself but also play a significant role in Japanese etiquette and performing arts.<br>
-        Their fan-shaped form spreading outwards symbolizes good fortune and prosperity, making them popular gifts for celebrations.
-      </p>
-
-      <div class="info-box">
-        <h3>
-          <span class="lang-ja">📍 有名な産地</span>
-          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
-        </h3>
-        <p class="lang-ja"><strong>京都府（京扇子） & 滋賀県（高島扇子）など</strong><br>京都を中心に、骨作り・地紙作り・仕上げまで多くの職人の分業によって作られる洗練された美しさが特徴です。</p>
-        <p class="lang-en" style="display: none;"><strong>Kyoto & Shiga Prefectures</strong><br>Crafted through a collaborative process among specialized artisans in Kyoto, known for refined beauty and elegance.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ⑤ 江戸切子の詳細ページ -->
-<section id="edokiriko" class="detail-section">
-  <h2>
-    <span class="lang-ja">江戸切子（えどきりこ）</span>
-    <span class="lang-en" style="display: none;">Edo Kiriko (Cut Glass)</span>
-  </h2>
-  <div class="layout">
-    <div>
-      <img src="edokiriko.jpg" alt="江戸切子グラス">
-    </div>
-    <div>
-      <p class="shop-text lang-ja">
-        江戸切子は、透明なガラスの表面に専用の道具で鮮やかなカットを施す、日本の伝統的なガラス工芸です。<br>
-        光が当たるとキラキラと乱反射し、職人の手仕事ならではの繊細なきらめきと重厚感が多くの人を魅了しています。
-      </p>
-      <p class="shop-text lang-en" style="display: none;">
-        Edo Kiriko is a traditional craft where intricate patterns are carved into colored glass surfaces using specialized cutting wheels.<br>
-        The glass beautifully refracts light, captivating people with its delicate sparkle and exquisite artisan skill.
-      </p>
-
-      <div class="info-box">
-        <h3>
-          <span class="lang-ja">📍 有名な産地</span>
-          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
-        </h3>
-        <p class="lang-ja"><strong>東京都（江東区・墨田区など）</strong><br>天保年間（江戸時代後期）にビードロ屋から始まったとされ、現在は東京の下町を中心に職人の技術が受け継がれています。</p>
-        <p class="lang-en" style="display: none;"><strong>Tokyo (Koto Ward, Sumida Ward, etc.)</strong><br>Originating in late Edo period glass shops, this craft continues to thrive in Tokyo's historic downtown districts.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ⑥ 南部鉄器の詳細ページ ＆ まとめ表（※戻るボタンは削除済み） -->
-<section id="nanbutekki" class="detail-section">
-  <h2>
-    <span class="lang-ja">南部鉄器（なんぶてっき）</span>
-    <span class="lang-en" style="display: none;">Nanbu Tekki (Ironware)</span>
-  </h2>
-  <div class="layout">
-    <div>
-      <img src="nanbutekki.jpg" alt="南部鉄器の鉄瓶">
-    </div>
-    <div>
-      <p class="shop-text lang-ja">
-        南部鉄器は、独特の文様（アラレ模様など）と重厚感が特徴の伝統的な鋳物（いもの）技術です。<br>
-        保温性に優れており、南部鉄瓶でお湯を沸かすと水質がまろやかになり、手軽に鉄分補給ができることでも国内外から高く評価されています。
-      </p>
-      <p class="shop-text lang-en" style="display: none;">
-        Nanbu Tekki is traditional cast ironware characterized by distinctive relief patterns (such as 'arale' dots) and solid texture.<br>
-        Known for excellent heat retention, water boiled in Nanbu kettles tastes softer and provides dietary iron, praised worldwide.
-      </p>
-
-      <div class="info-box">
-        <h3>
-          <span class="lang-ja">📍 有名な産地</span>
-          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
-        </h3>
-        <p class="lang-ja"><strong>岩手県（盛岡市・奥州市）</strong><br>江戸時代に南部藩主が京都から鋳物師を招いて鉄瓶を作らせたのが始まりとされています。</p>
-        <p class="lang-en" style="display: none;"><strong>Iwate Prefecture (Morioka & Oshu)</strong><br>Began when the local feudal lord invited master foundrymen from Kyoto during the Edo period to produce kettles.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 伝統工芸の比較・まとめ表 -->
-  <h3>
-    <span class="lang-ja">伝統工芸の比較・まとめ</span>
-    <span class="lang-en" style="display: none;">Craft Comparison Summary</span>
-  </h3>
-  <table>
-    <tr>
-      <th>
-        <span class="lang-ja">工芸品名</span>
-        <span class="lang-en" style="display: none;">Craft Name</span>
-      </th>
-      <th>
-        <span class="lang-ja">主な特徴・魅力</span>
-        <span class="lang-en" style="display: none;">Main Features</span>
-      </th>
-      <th>
-        <span class="lang-ja">主な産地</span>
-        <span class="lang-en" style="display: none;">Main Origin</span>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <span class="lang-ja">寄木細工</span>
-        <span class="lang-en" style="display: none;">Yosegi Woodwork</span>
-      </td>
-      <td>
-        <span class="lang-ja">天然木の色を組み合わせた緻密な幾何学模様</span>
-        <span class="lang-en" style="display: none;">Intricate geometric patterns made from natural wood colors</span>
-      </td>
-      <td>
-        <span class="lang-ja">神奈川県（箱根）</span>
-        <span class="lang-en" style="display: none;">Hakone, Kanagawa</span>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="lang-ja">扇子</span>
-        <span class="lang-en" style="display: none;">Folding Fans</span>
-      </td>
-      <td>
-        <span class="lang-ja">「末広がり」の縁起の良さと洗練された機能美</span>
-        <span class="lang-en" style="display: none;">Symbol of good fortune with elegant functional design</span>
-      </td>
-      <td>
-        <span class="lang-ja">京都府など</span>
-        <span class="lang-en" style="display: none;">Kyoto Prefecture, etc.</span>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="lang-ja">江戸切子</span>
-        <span class="lang-en" style="display: none;">Edo Kiriko Glass</span>
-      </td>
-      <td>
-        <span class="lang-ja">ガラスの表面に刻まれた繊細なカットと輝き</span>
-        <span class="lang-en" style="display: none;">Delicate cuts and vibrant brilliance on glass surfaces</span>
-      </td>
-      <td>
-        <span class="lang-ja">東京都（江東区など）</span>
-        <span class="lang-en" style="display: none;">Tokyo (Koto, Sumida)</span>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="lang-ja">南部鉄器</span>
-        <span class="lang-en" style="display: none;">Nanbu Ironware</span>
-      </td>
-      <td>
-        <span class="lang-ja">重厚な質感と保温性、白湯をまろやかにする実用性</span>
-        <span class="lang-en" style="display: none;">Durable ironware that softens boiled water naturally</span>
-      </td>
-      <td>
-        <span class="lang-ja">岩手県（盛岡・奥州）</span>
-        <span class="lang-en" style="display: none;">Morioka & Oshu, Iwate</span>
-      </td>
-    </tr>
-  </table>
-</section>
-
-
-<!-- ⑦ 独立した「伝統的工芸品とは？」＆ 経産省リンクのページ -->
+<!-- 伝統的工芸品とは？＆ 経産省リンク -->
 <section id="about-crafts" class="detail-section">
   <h2>
     <span class="lang-ja">伝統的工芸品について</span>
@@ -357,64 +145,58 @@
     法律に基づいて、経済産業大臣によって指定されています。
   </p>
   <p class="lang-en" style="display: none;">
-    Japan's "Traditional Crafts" are masterworks preserved for over 100 years, predominantly handcrafted and passed down through generations, officially designated by the Minister of Economy, Trade and Industry.
+    Japan's "Traditional Crafts" are masterworks preserved for over 100 years, predominantly handcrafted and passed down through generations.
   </p>
 
   <div class="info-box" style="margin-top: 30px; text-align: center; padding: 25px;">
-    <h3 style="margin-bottom: 10px;">
+    <h3>
       <span class="lang-ja">🔗 経済産業省 公式情報</span>
       <span class="lang-en" style="display: none;">🔗 METI Official Information</span>
     </h3>
-    <p class="lang-ja" style="margin-bottom: 15px;">全国の伝統的工芸品について詳しく知りたい方は、経済産業省のページをご覧ください。</p>
-    <p class="lang-en" style="display: none; margin-bottom: 15px;">To learn more about traditional crafts across Japan, please visit the official METI page.</p>
-    
-    <a href="https://www.meti.go.jp/policy/mono_info_service/mono/nichiyo-densan/index.html" target="_blank" rel="noopener noreferrer" class="scroll-btn" style="display: inline-block; padding: 10px 24px; font-size: 0.95rem;">
+    <a href="https://www.meti.go.jp/policy/mono_info_service/mono/nichiyo-densan/index.html" target="_blank" rel="noopener noreferrer" class="scroll-btn" style="display: inline-block; padding: 10px 24px; font-size: 0.95rem; margin-top: 15px;">
       <span class="lang-ja">経済産業省 伝統的工芸品品目一覧 ↗</span>
       <span class="lang-en" style="display: none;">METI Traditional Crafts Page ↗</span>
     </a>
   </div>
-
-  <!-- TOPへ戻るボタン -->
-  <div style="text-align: center; margin-top: 35px;">
-    <a href="#select-section" class="scroll-btn">
-      <span class="lang-ja">↑ 選択画面に戻る</span>
-      <span class="lang-en" style="display: none;">↑ Back to Selection</span>
-    </a>
-  </div>
 </section>
 
-
-<!-- フッター -->
 <footer>
   &copy; 日本の伝統美 Web - Traditional Japanese Crafts
 </footer>
 
-<!-- 言語切り替えJS -->
 <script>
+  // 1. 言語を切り替えて保存する関数
   function switchLanguage(lang) {
     const jaElements = document.querySelectorAll('.lang-ja');
     const enElements = document.querySelectorAll('.lang-en');
     const btnJa = document.getElementById('btn-ja');
     const btnEn = document.getElementById('btn-en');
 
+    // ブラウザに言語設定を記憶させる
+    localStorage.setItem('siteLang', lang);
+
     if (lang === 'en') {
       jaElements.forEach(el => el.style.display = 'none');
       enElements.forEach(el => el.style.display = 'inline-block');
       document.querySelectorAll('p.lang-en, div.lang-en').forEach(el => el.style.display = 'block');
-      
-      btnJa.classList.remove('active');
-      btnEn.classList.add('active');
+      if (btnJa) btnJa.classList.remove('active');
+      if (btnEn) btnEn.classList.add('active');
     } else {
       enElements.forEach(el => el.style.display = 'none');
       jaElements.forEach(el => el.style.display = 'inline-block');
       document.querySelectorAll('p.lang-ja, div.lang-ja').forEach(el => el.style.display = 'block');
-      
-      btnEn.classList.remove('active');
-      btnJa.classList.add('active');
+      if (btnEn) btnEn.classList.remove('active');
+      if (btnJa) btnJa.classList.add('active');
     }
   }
+
+  // 2. ページを開いたとき、保存されている言語を自動で適用する
+  document.addEventListener('DOMContentLoaded', () => {
+    // 保存されている言語を取得（保存されていなければデフォルトで 'ja'）
+    const savedLang = localStorage.getItem('siteLang') || 'ja';
+    switchLanguage(savedLang);
+  });
 </script>
 
 </body>
-
 </html>
