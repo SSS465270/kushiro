@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>開発者について - 日本の伝統美</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- 右上の言語切り替えUI -->
+<div class="lang-switch-header">
+  <button id="btn-ja" class="lang-btn active" onclick="switchLanguage('ja')">JP</button>
+  <span class="lang-divider">|</span>
+  <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+</div>
+
+<section class="detail-section" style="margin-top: 80px;">
+  <h2>
+    <span class="lang-ja">開発者について</span>
+    <span class="lang-en" style="display: none;">About the Developer</span>
+  </h2>
+  
+
+  <div style="max-width: 600px; margin: 0 auto;">
+    <p class="shop-text lang-ja">
+  当サイトをご覧いただきありがとうございます！<br>
+  このサイトは <a href="https://sss465270.github.io/kushiro/" target="_blank" rel="noopener noreferrer">https://sss465270.github.io/kushiro/</a> にて公開しております。
+</p>
+    <p class="shop-text lang-en" style="display: none;">
+      Thank you for visiting our site!<br>
+     </p>
+
+    <div class="info-box" style="margin-top: 30px;">
+      <h3>
+        <span class="lang-ja">制作者情報</span>
+        <span class="lang-en" style="display: none;">Profile</span>
+      </h3>
+      <p class="lang-ja">
+  <strong>GitHub:</strong> <a href="https://github.com/SSS465270" target="_blank" rel="noopener noreferrer">https://github.com/SSS465270</a>
+</p>
+<p class="lang-en" style="display: none;">
+  <strong>GitHub:</strong> <a href="https://github.com/SSS465270" target="_blank" rel="noopener noreferrer">https://github.com/SSS465270</a>
+</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <!-- 選択画面（#select-section)に戻るリンク -->
+    <a href="index.html#select-section" class="scroll-btn">
+      <span class="lang-ja">← 伝統工芸を選ぶに戻る</span>
+      <span class="lang-en" style="display: none;">← Back to Selection</span>
+    </a>
+  </div>
+</section>
+
+<!-- 言語切り替えJS -->
+<script>
+  function switchLanguage(lang) {
+    const jaElements = document.querySelectorAll('.lang-ja');
+    const enElements = document.querySelectorAll('.lang-en');
+    const btnJa = document.getElementById('btn-ja');
+    const btnEn = document.getElementById('btn-en');
+
+    localStorage.setItem('siteLang', lang);
+
+    if (lang === 'en') {
+      jaElements.forEach(el => el.style.display = 'none');
+      enElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-en, div.lang-en').forEach(el => el.style.display = 'block');
+      if (btnJa) btnJa.classList.remove('active');
+      if (btnEn) btnEn.classList.add('active');
+    } else {
+      enElements.forEach(el => el.style.display = 'none');
+      jaElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-ja, div.lang-ja').forEach(el => el.style.display = 'block');
+      if (btnEn) btnEn.classList.remove('active');
+      if (btnJa) btnJa.classList.add('active');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('siteLang') || 'ja';
+    switchLanguage(savedLang);
+  });
+</script>
+
+</body>
+</html>

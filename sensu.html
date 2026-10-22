@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>扇子 - 日本の伝統美</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ① 右上の言語切り替えUI -->
+<div class="lang-switch-header">
+  <button id="btn-ja" class="lang-btn active" onclick="switchLanguage('ja')">JP</button>
+  <span class="lang-divider">|</span>
+  <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+</div>
+
+<section class="detail-section" style="margin-top: 80px;">
+  <h2>
+    <span class="lang-ja">扇子（せんす）</span>
+    <span class="lang-en" style="display: none;">Sensu (Folding Fans)</span>
+  </h2>
+  
+  <div class="layout">
+    <div>
+      <img src="sensu.webp" alt="扇子">
+    </div>
+    <div>
+      <p class="shop-text lang-ja">
+        扇子はあおいで風を起こすだけでなく、日本の礼儀作法や伝統芸能にも深く結びついてきた文化的な道具です。開いたときの美しい末広がり（末広）の形は、縁起が良いものとされています。
+      </p>
+      <p class="shop-text lang-en" style="display: none;">
+        Sensu are traditional folding fans that serve not only to cool oneself but also play a significant role in Japanese etiquette and performing arts. Their spreading shape symbolizes good fortune.
+      </p>
+
+      <div class="info-box">
+        <h3>
+          <span class="lang-ja">📍 有名な産地</span>
+          <span class="lang-en" style="display: none;">📍 Famous Origin</span>
+        </h3>
+        <p class="lang-ja"><strong>京都府（京扇子）など</strong><br>多くの職人の分業によって作られる洗練された美しさが特徴です。</p>
+        <p class="lang-en" style="display: none;"><strong>Kyoto Prefecture, etc.</strong><br>Crafted through a collaborative process among specialized artisans in Kyoto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="index.html#select-section" class="scroll-btn">
+  <span class="lang-ja">← 伝統工芸を選ぶに戻る</span>
+  <span class="lang-en" style="display: none;">← Back to Selection</span>
+</a>
+  </div>
+</section>
+
+<!-- ② 言語切り替えJS -->
+<script>
+  // 1. 言語を切り替えて保存する関数
+  function switchLanguage(lang) {
+    const jaElements = document.querySelectorAll('.lang-ja');
+    const enElements = document.querySelectorAll('.lang-en');
+    const btnJa = document.getElementById('btn-ja');
+    const btnEn = document.getElementById('btn-en');
+
+    // ブラウザに言語設定を記憶させる
+    localStorage.setItem('siteLang', lang);
+
+    if (lang === 'en') {
+      jaElements.forEach(el => el.style.display = 'none');
+      enElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-en, div.lang-en').forEach(el => el.style.display = 'block');
+      if (btnJa) btnJa.classList.remove('active');
+      if (btnEn) btnEn.classList.add('active');
+    } else {
+      enElements.forEach(el => el.style.display = 'none');
+      jaElements.forEach(el => el.style.display = 'inline-block');
+      document.querySelectorAll('p.lang-ja, div.lang-ja').forEach(el => el.style.display = 'block');
+      if (btnEn) btnEn.classList.remove('active');
+      if (btnJa) btnJa.classList.add('active');
+    }
+  }
+
+  // 2. ページを開いたとき、保存されている言語を自動で適用する
+  document.addEventListener('DOMContentLoaded', () => {
+    // 保存されている言語を取得（保存されていなければデフォルトで 'ja'）
+    const savedLang = localStorage.getItem('siteLang') || 'ja';
+    switchLanguage(savedLang);
+  });
+</script>
+
+</body>
+</html>
